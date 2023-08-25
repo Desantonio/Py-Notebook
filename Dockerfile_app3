@@ -1,0 +1,13 @@
+FROM python:3.9
+
+# Set working directory
+WORKDIR /app
+
+# Install required packages
+RUN pip install matplotlib
+
+# Copy your code and data into the container
+COPY docker_test.py /app/
+
+# Set the command to run your script
+CMD ["python", "docker_test.py"]

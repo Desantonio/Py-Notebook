@@ -1,0 +1,13 @@
+FROM python:3.9
+
+# Set working directory
+WORKDIR /app
+
+# Install required packages
+RUN pip install yfinance
+
+# Copy your code and data into the container
+COPY python_finance_4.py /app/
+
+# Set the command to run your script
+CMD ["python", "python_finance_4.py"]
