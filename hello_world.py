@@ -56,3 +56,16 @@ for i in range(num_data_points):
 # Print the array of data points
 print("Data points:", data_points)
 print(mean(data_points))
+
+import yfinance as yf
+
+def invest(money):
+    stock_symbol = str(input("Enter the Stock Symbol: "))
+    stock_data = yf.Ticker(stock_symbol)
+    current_close = stock_data.history(period="1d")
+    close_info = current_close['Close'][0]
+    invest_amount = money * close_info
+    print(f"Your Total Investment in Stock {stock_symbol} is: {invest_amount}")
+
+input_money = int(input("Enter the Capital to invest: "))
+invest(input_money)
