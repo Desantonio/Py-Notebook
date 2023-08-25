@@ -28,3 +28,37 @@ know_about_close_price(symbol_input)
 symbol_input = input("Enter the Stock Symbol to invest in: ")
 capital = float(input("Enter the Capital to invest: "))
 invest(symbol_input, capital)
+
+
+import yfinance as yf
+import matplotlib.pyplot as plt
+
+# Fetch AAPL stock data for the specified period
+start_date = "2023-06-01"
+end_date = "2023-06-30"
+aapl = yf.Ticker("AAPL")
+data = aapl.history(start=start_date, end=end_date)
+
+# Visualize the data using matplotlib
+plt.figure(figsize=(10, 6))
+plt.plot(data['Close'], label='AAPL Close Price')
+plt.title('AAPL Stock Price - June 2023')
+plt.xlabel('Date')
+plt.ylabel('Price (USD)')
+plt.legend()
+plt.grid()
+plt.show()
+
+import matplotlib
+import numpy as np
+
+x = np.arange(1, 11)
+y = np.array([1000, 1330, 1200, 1340, 1500, 1678, 950, 1570, 2000, 2020])
+
+plt.figure(figsize=(8, 6))
+plt.plot(x, y, marker='o')
+plt.title("Data Visualization of a Shop's Daily Revenue")
+plt.xlabel("No. of Days")
+plt.ylabel("Daily Revenue")
+plt.grid(True)
+plt.show()
