@@ -62,3 +62,17 @@ plt.xlabel("No. of Days")
 plt.ylabel("Daily Revenue")
 plt.grid(True)
 plt.show()
+
+import matplotlib 
+import numpy as np
+
+x = np.arange(1, 6)
+y = np.array([1000, 1200, 1500, 2000, 1900])
+
+plt.figure(figsize=(8,8))
+plt.plot(x, y, marker='o')
+plt.title("Daily Profit on Algorithmic Trading")
+plt.xlabel("Days")
+plt.ylabel("Daily Profit")
+plt.grid(True)
+plt.show()
