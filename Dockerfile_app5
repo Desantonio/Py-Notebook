@@ -1,0 +1,15 @@
+# Use an official Python runtime as a parent image
+FROM python:3.9
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the main script and the .json file into the container
+COPY python_finance_5.py .
+COPY python-ee2b0-firebase-adminsdk-qj2a4-8771ae3964.json .
+
+# Install yfinance and firebase-admin
+RUN pip install yfinance firebase-admin
+
+# Run the Python script
+CMD ["python", "python_finance_5.py"]
